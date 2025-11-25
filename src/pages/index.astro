@@ -1,68 +1,25 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import HorizontalCard from "../components/HorizontalCard.astro";
-import { getCollection } from "astro:content";
-import createSlug from "../lib/createSlug"
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+// Coge todos los landscapes
+const allLandscapes = await getCollection('landscapes');
+const featured = allLandscapes
+  .filter(l => l.data.featured)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
-const last_posts = posts.slice(0, 3);
+const recent = allLandscapes
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 8); // 8 últimos paisajes
 ---
 
-<BaseLayout sideBarActiveItemID="home">
-  <div class="pb-12 mt-5">
-    <div class="text-3xl py-3 font-bold">jmartelo.com - Landscapes photography</div>
-    <div class="py-2">
-      <text class="text-lg">
-        As an amateur photographer, this is my personal landscapes collection. I hope you enjoy it as much as I do.
-      </text>
-    </div>
-  </div>
-
-  <div>
-    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
-  </div>
-
-  <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
-  />
-
-  <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
-  </div>
-
-  {
-    last_posts.map((post) => (
-      <>
-        <HorizontalCard
-          title={post.data.title}
-          img={post.data.heroImage}
-          desc={post.data.description}
-          url={"/blog/" + createSlug(post.data.title, post.slug)}
-          target="_self"
-          badge={post.data.badge}
-        />
-        <div class="divider my-0" />
-      </>
-    ))
-  }
-</BaseLayout>
+<BaseLayout title="Tu Nombre • Landscape Photographer">
+  <!-- Hero con tu foto y título -->
+  <section class="relative h-screen flex items-center justify-center bg-black">
+    <img 
+      src="https://res.cloudinary.com/dmzjvfa0p/image/upload/w_1920,q_auto,f_auto/v1764069312/bruninchis_sdcyvi.jpg" 
+      alt="Tu nombre" 
+      class="absolute inset-0 w-full h-full object-cover opacity-70"
+    />
+    <div class="relative text-center text-white z-10 px-6">
+      <h1 class="text-5xl md:text-7xl font-bold mb-4">Tu Nombre</h1>
