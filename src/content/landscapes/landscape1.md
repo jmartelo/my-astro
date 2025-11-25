@@ -1,14 +1,13 @@
 ---
-title: "Portugal"
-description: "Portugal"
-pubDate: 2024-12-01
-location: "Kirkjufell, Islandia"
-camera: "Sony A1 · 14mm f/1.8"
+title: "Faro de Lariño"
+description: "Faro de Lariño, cerca de Portugal. Atardecer."
+pubDate: 2023-10-18
+location: "Lariño, Galicia"
+camera: "Sony A7 · 24-70mm f/2.8 GM"
 featured: true
-heroImage: "https://res.cloudinary.com/dmzjvfa0p/image/upload/v1764071578/DSC05553_s8kvuo.jpg"
-<!--thumbnail: "https://res.cloudinary.com/dmzjvfa0p/image/upload/w_1200,h_800,c_fill,q_auto,f_auto/v1/portfolio/kirkjufell-aurora-thumb.jpg"-->
-tags: ["auroras", "islandia", "nocturna"]
+heroImage: "https://res.cloudinary.com/dmzjvfa0p/image/upload/w_2400,q_auto:good,f_auto/v1764071578/DSC05553_s8kvuo.jpg"
+thumbnail: "https://res.cloudinary.com/dmzjvfa0p/image/upload/w_1200,h_800,c_fill,g_auto,q_auto:good,f_auto/v1764071578/DSC05553_s8kvuo.jpg"
+tags: ["portugal", "galicia", "lariño", "atardecer", "faro"]
 ---
 
-Una de esas noches mágicas en las que el cielo explota en verde y púrpura.  
-Temperatura -18 °C, viento fuerte y tres horas esperando a que la actividad solar subiera. Mereció la pena cada segundo.
+Faro de Lariño. 
