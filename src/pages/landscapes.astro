@@ -3,51 +3,27 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const allLandscapes = await getCollection('landscapes');
-const featured = allLandscapes.filter(l => l.data.featured);
 const sorted = allLandscapes.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
-<BaseLayout title="Landscapes">
+<BaseLayout title="Landscapes • Julio Martelo">
   <section class="max-w-7xl mx-auto px-6 py-16">
     <h1 class="text-5xl md:text-6xl font-bold text-center mb-16">Landscapes</h1>
 
-    <!-- Destacados grandes -->
-    {featured.length > 0 && (
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
-        {featured.map(item => (
-          {a.allLandscapes.map(item => (
-  <a href={`/landscapes/${item.slug}`} class="group">
-    <img 
-  src={item.data.thumbnail || item.data.heroImage}
-  alt={item.data.title}
-  width="800"
-  height="600"
-  loading="lazy"
-  class="w-full h-64 object-cover rounded-lg shadow-md group-hover:shadow-2xl transition"
-/>
-    <h3 class="mt-4 text-xl">{item.data.title}</h3>
-  </a>
-))}
-        ))}
-      </div>
-    )}
-
-    <!-- Grid de todos -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
       {sorted.map(item => (
-{a.allLandscapes.map(item => (
-  <a href={`/landscapes/${item.slug}`} class="group">
-    <img 
-  src={item.data.thumbnail || item.data.heroImage}
-  alt={item.data.title}
-  width="800"
-  height="600"
-  loading="lazy"
-  class="w-full h-64 object-cover rounded-lg shadow-md group-hover:shadow-2xl transition"
-/>
-    <h3 class="mt-4 text-xl">{item.data.title}</h3>
-  </a>
-))}
+        <a href={`/landscapes/${item.slug}`} class="group block">
+          <img
+            src={item.data.thumbnail || item.data.heroImage}
+            alt={item.data.title}
+            width="800"
+            height="600"
+            loading="lazy"
+            class="w-full h-64 object-cover rounded-lg shadow-lg group-hover:shadow-2xl transition"
+          />
+          <h3 class="mt-4 text-xl font-medium text-center">{item.data.title}</h3>
+          <p class="text-sm text-gray-600 text-center">{item.data.location}</p>
+        </a>
       ))}
     </div>
   </section>
