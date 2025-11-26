@@ -18,10 +18,13 @@ const sorted = allLandscapes.sort((a, b) => b.data.pubDate.valueOf() - a.data.pu
           {a.allLandscapes.map(item => (
   <a href={`/landscapes/${item.slug}`} class="group">
     <img 
-      src={item.data.thumbnail || item.data.heroImage} 
-      alt={item.data.title} 
-      class="w-full h-64 object-cover rounded-lg"
-    />
+  src={item.data.thumbnail || item.data.heroImage}
+  alt={item.data.title}
+  width="800"
+  height="600"
+  loading="lazy"
+  class="w-full h-64 object-cover rounded-lg shadow-md group-hover:shadow-2xl transition"
+/>
     <h3 class="mt-4 text-xl">{item.data.title}</h3>
   </a>
 ))}
@@ -35,10 +38,13 @@ const sorted = allLandscapes.sort((a, b) => b.data.pubDate.valueOf() - a.data.pu
 {a.allLandscapes.map(item => (
   <a href={`/landscapes/${item.slug}`} class="group">
     <img 
-      src={item.data.thumbnail || item.data.heroImage} 
-      alt={item.data.title} 
-      class="w-full h-64 object-cover rounded-lg"
-    />
+  src={item.data.thumbnail || item.data.heroImage}
+  alt={item.data.title}
+  width="800"
+  height="600"
+  loading="lazy"
+  class="w-full h-64 object-cover rounded-lg shadow-md group-hover:shadow-2xl transition"
+/>
     <h3 class="mt-4 text-xl">{item.data.title}</h3>
   </a>
 ))}
