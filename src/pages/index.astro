@@ -13,9 +13,8 @@ const recent = allLandscapes
 ---
 
 <BaseLayout title="Julio Martelo • Landscape Photographer">
-  <!-- Hero -->
   <section class="relative h-screen flex items-center justify-center bg-black overflow-hidden">
-    <img 
+    <img
       src="https://res.cloudinary.com/dmzjvfa0p/image/upload/w_1920,h_1080,c_fill,g_auto,q_auto:good,f_auto/v1764071578/DSC05553_s8kvuo.jpg"
       alt="Faro de Lariño – Galicia"
       class="absolute inset-0 w-full h-full object-cover opacity-75"
@@ -30,10 +29,9 @@ const recent = allLandscapes
     </div>
   </section>
 
-  <!-- Featured -->
   {featured.length > 0 && (
     <section class="max-w-7xl mx-auto px-6 py-20">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">Featured Landscapes</h2>
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">Featured</h2>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
         {featured.map(item => (
           <a href={`/landscapes/${item.slug}`} class="group block">
@@ -43,7 +41,7 @@ const recent = allLandscapes
               width="1200"
               height="800"
               loading="lazy"
-              class="w-full h-96 object-cover rounded-xl shadow-2xl group-hover:scale-[1.02] transition duration-500"
+              class="w-full h-96 object-cover rounded-xl shadow-2xl group-hover:scale-[1.02] transition"
             />
             <h3 class="mt-6 text-2xl font-semibold">{item.data.title}</h3>
             <p class="text-gray-600">{item.data.location}</p>
@@ -53,7 +51,6 @@ const recent = allLandscapes
     </section>
   )}
 
-  <!-- Latest Work -->
   <section class="bg-gray-100 py-20">
     <div class="max-w-7xl mx-auto px-6">
       <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">Latest Work</h2>
